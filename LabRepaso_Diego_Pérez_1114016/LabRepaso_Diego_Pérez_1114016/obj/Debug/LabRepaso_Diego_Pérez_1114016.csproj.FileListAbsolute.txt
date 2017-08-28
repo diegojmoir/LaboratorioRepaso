@@ -1,1 +1,16 @@
 C:\Users\Diego Pérez Moir\Desktop\U\Cuarto Ciclo\Estructura de Datos ll\LabRepaso_Diego_Pérez_1114016\LabRepaso_Diego_Pérez_1114016\bin\Debug\LabRepaso_Diego_Pérez_1114016.exe.config
+C:\Users\Diego Pérez Moir\Desktop\U\Cuarto Ciclo\Estructura de Datos ll\LabRepaso_Diego_Pérez_1114016\LabRepaso_Diego_Pérez_1114016\bin\Debug\LabRepaso_Diego_Pérez_1114016.exe
+C:\Users\Diego Pérez Moir\Desktop\U\Cuarto Ciclo\Estructura de Datos ll\LabRepaso_Diego_Pérez_1114016\LabRepaso_Diego_Pérez_1114016\bin\Debug\LabRepaso_Diego_Pérez_1114016.pdb
+C:\Users\Diego Pérez Moir\Desktop\U\Cuarto Ciclo\Estructura de Datos ll\LabRepaso_Diego_Pérez_1114016\LabRepaso_Diego_Pérez_1114016\obj\Debug\LabRepaso_Diego_Pérez_1114016.csprojResolveAssemblyReference.cache
+C:\Users\Diego Pérez Moir\Desktop\U\Cuarto Ciclo\Estructura de Datos ll\LabRepaso_Diego_Pérez_1114016\LabRepaso_Diego_Pérez_1114016\obj\Debug\LabRepaso_Diego_Pérez_1114016.Form1.resources
+C:\Users\Diego Pérez Moir\Desktop\U\Cuarto Ciclo\Estructura de Datos ll\LabRepaso_Diego_Pérez_1114016\LabRepaso_Diego_Pérez_1114016\obj\Debug\LabRepaso_Diego_Pérez_1114016.Properties.Resources.resources
+C:\Users\Diego Pérez Moir\Desktop\U\Cuarto Ciclo\Estructura de Datos ll\LabRepaso_Diego_Pérez_1114016\LabRepaso_Diego_Pérez_1114016\obj\Debug\LabRepaso_Diego_Pérez_1114016.csproj.GenerateResource.Cache
+C:\Users\Diego Pérez Moir\Desktop\U\Cuarto Ciclo\Estructura de Datos ll\LabRepaso_Diego_Pérez_1114016\LabRepaso_Diego_Pérez_1114016\obj\Debug\LabRepaso_Diego_Pérez_1114016.exe
+C:\Users\Diego Pérez Moir\Desktop\U\Cuarto Ciclo\Estructura de Datos ll\LabRepaso_Diego_Pérez_1114016\LabRepaso_Diego_Pérez_1114016\obj\Debug\LabRepaso_Diego_Pérez_1114016.pdb
+C:\Users\Diego Pérez Moir\Desktop\U\Cuarto Ciclo\Estructura de Datos ll\LabRepaso_Diego_Pérez_1114016\LabRepaso_Diego_Pérez_1114016\obj\Debug\LabRepaso_Diego_Pérez_1114016.Data.resources
+C:\Users\Diego Pérez Moir\Desktop\U\Cuarto Ciclo\Estructura de Datos ll\LabRepaso_Diego_Pérez_1114016\LabRepaso_Diego_Pérez_1114016\obj\Debug\Interop.WMPLib.dll
+C:\Users\Diego Pérez Moir\Desktop\U\Cuarto Ciclo\Estructura de Datos ll\LabRepaso_Diego_Pérez_1114016\LabRepaso_Diego_Pérez_1114016\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Diego Pérez Moir\Desktop\U\Cuarto Ciclo\Estructura de Datos ll\LabRepaso_Diego_Pérez_1114016\LabRepaso_Diego_Pérez_1114016\obj\Debug\LabRepaso_Diego_Pérez_1114016.csproj.ResolveComReference.cache
+C:\Users\Diego Pérez Moir\Desktop\U\Cuarto Ciclo\Estructura de Datos ll\LabRepaso_Diego_Pérez_1114016\LabRepaso_Diego_Pérez_1114016\bin\Debug\Interop.WMPLib.dll
+C:\Users\Diego Pérez Moir\Desktop\U\Cuarto Ciclo\Estructura de Datos ll\LabRepaso_Diego_Pérez_1114016\LabRepaso_Diego_Pérez_1114016\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Diego Pérez Moir\Desktop\U\Cuarto Ciclo\Estructura de Datos ll\LabRepaso_Diego_Pérez_1114016\LabRepaso_Diego_Pérez_1114016\obj\Debug\LabRepaso_Diego_Pérez_1114016.Agregar_Canción.resources

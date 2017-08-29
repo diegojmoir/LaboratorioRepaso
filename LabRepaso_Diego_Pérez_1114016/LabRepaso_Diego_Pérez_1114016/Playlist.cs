@@ -10,9 +10,6 @@ namespace LabRepaso_Diego_Pérez_1114016
     {
         private string playlistName;
         private List<Song> Songs; 
-        private List<string> Name;
-        private List<string> Path;
-        private string[] Time;
         
         public List<Song> _songs
         {
@@ -23,24 +20,6 @@ namespace LabRepaso_Diego_Pérez_1114016
         {
             get { return playlistName; }
             set { playlistName = value; }
-        }
-
-        public List<string> _name
-        {
-            get { return Name; }
-            set { Name = value; }
-        }
-
-        public List<string> _path
-        {
-            get { return Path; }
-            set { Path = value; }
-        }
-
-        public string[] _time
-        {
-            get { return Time; }
-            set { Time = value; }
-        }
+        }      
     }
 }

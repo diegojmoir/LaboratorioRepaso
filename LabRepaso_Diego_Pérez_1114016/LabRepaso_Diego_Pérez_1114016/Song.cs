@@ -8,22 +8,22 @@ namespace LabRepaso_Diego_Pérez_1114016
 {
     public class Song
     {
-        private List<string> Name;
-        private List<string> Path;
-        private string[] Time;
-        public List<string> _name
+        private string Name;
+        private string Path;
+        private double Time;
+        public string _name
         {
             get { return Name; }
             set { Name = value; }
         }
 
-        public List<string> _path
+        public string _path
         {
             get { return Path; }
             set { Path = value; }
         }
 
-        public string[] _time
+        public double _time
         {
             get { return Time; }
             set { Time = value; }

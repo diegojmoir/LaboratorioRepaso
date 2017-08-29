@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;0
+using System.Windows.Forms;
 using System.IO; 
 
 namespace LabRepaso_Diego_Pérez_1114016
@@ -23,13 +23,11 @@ namespace LabRepaso_Diego_Pérez_1114016
             Music = _music;
             showPlaylists();
         }
-
-        private void checkNullPlaylist()
+        private void checkNullList()
         {
-            if (Music[selectedPlaylist]._name == null)
+            if(Music[selectedPlaylist]._songs == null)
             {
-                Music[selectedPlaylist]._name = new List<string>();
-                Music[selectedPlaylist]._path = new List<string>();
+                Music[selectedPlaylist]._songs = new List<Song>(); 
             }
         }
         private void showPlaylists()
@@ -41,7 +39,7 @@ namespace LabRepaso_Diego_Pérez_1114016
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            checkNullPlaylist(); 
+            checkNullList(); 
             OpenFileDialog fileSearch = new OpenFileDialog();
             fileSearch.Multiselect = true;
             fileSearch.Filter = "Archivos MP3 (*.mp3)|*.mp3";
@@ -49,16 +47,15 @@ namespace LabRepaso_Diego_Pérez_1114016
             {
                 for(int i = 0; i < fileSearch.FileNames.Length; i++)
                 {
-                    Music[selectedPlaylist]._name.Add(fileSearch.SafeFileNames[i]);
-                    Music[selectedPlaylist]._path.Add(fileSearch.FileNames[i]);
+                    Song aux = new Song();
+                    aux._name = fileSearch.SafeFileNames[i].Substring(0, fileSearch.SafeFileNames[i].Length - 4);
+                    aux._path = fileSearch.FileNames[i];
+                    TagLib.File time = TagLib.File.Create(fileSearch.FileNames[i]);
+                    aux._time = Math.Round(time.Properties.Duration.TotalMinutes, 2); 
+                   
+                    Music[selectedPlaylist]._songs.Add(aux); 
                 }
-               
-                //for(int i = 0; i < Music[selectedPlaylist]._path.Length; i++)
-                //{
-                //    mediaPlayer.URL = Music[selectedPlaylist]._path[i];
-                    
-                //    MessageBox.Show("hola"); 
-                //}                                     
+                                                 
             }
             this.Close(); 
         }

@@ -14,3 +14,6 @@ C:\Users\Diego Pérez Moir\Desktop\U\Cuarto Ciclo\Estructura de Datos ll\LabRepa
 C:\Users\Diego Pérez Moir\Desktop\U\Cuarto Ciclo\Estructura de Datos ll\LabRepaso_Diego_Pérez_1114016\LabRepaso_Diego_Pérez_1114016\bin\Debug\Interop.WMPLib.dll
 C:\Users\Diego Pérez Moir\Desktop\U\Cuarto Ciclo\Estructura de Datos ll\LabRepaso_Diego_Pérez_1114016\LabRepaso_Diego_Pérez_1114016\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\Diego Pérez Moir\Desktop\U\Cuarto Ciclo\Estructura de Datos ll\LabRepaso_Diego_Pérez_1114016\LabRepaso_Diego_Pérez_1114016\obj\Debug\LabRepaso_Diego_Pérez_1114016.Agregar_Canción.resources
+C:\Users\Diego Pérez Moir\Desktop\U\Cuarto Ciclo\Estructura de Datos ll\LabRepaso_Diego_Pérez_1114016\LabRepaso_Diego_Pérez_1114016\bin\Debug\policy.2.0.taglib-sharp.dll
+C:\Users\Diego Pérez Moir\Desktop\U\Cuarto Ciclo\Estructura de Datos ll\LabRepaso_Diego_Pérez_1114016\LabRepaso_Diego_Pérez_1114016\bin\Debug\taglib-sharp.dll
+C:\Users\Diego Pérez Moir\Desktop\U\Cuarto Ciclo\Estructura de Datos ll\LabRepaso_Diego_Pérez_1114016\LabRepaso_Diego_Pérez_1114016\bin\Debug\policy.2.0.taglib-sharp.config

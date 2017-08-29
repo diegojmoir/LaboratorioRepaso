@@ -13,6 +13,7 @@ namespace LabRepaso_Diego_Pérez_1114016
     public partial class Form1 : Form
     {
         List<Playlist> Music = new List<Playlist>();
+        List<Song> aux = new List<Song>(); 
         public Form1()
         {            
             InitializeComponent();
@@ -23,7 +24,10 @@ namespace LabRepaso_Diego_Pérez_1114016
             Playlist list = new Playlist();
             Data listName = new Data(list);
             listName.ShowDialog();
-            Music.Add(list);
+            if(list._playlistName != null)
+            {
+                Music.Add(list);
+            }           
         }
 
         private void loadPlaylist()
@@ -37,12 +41,13 @@ namespace LabRepaso_Diego_Pérez_1114016
 
         private void loadSongs()
         {
-            for(int i = 0; i < Music[cmbPlaylists.SelectedIndex]._name.Count; i++)
+            for(int i = 0; i < Music[cmbPlaylists.SelectedIndex]._songs.Count; i++)
             {
-                lstSongs.Items.Add(Music[cmbPlaylists.SelectedIndex]._name[i]); 
+                lstSongs.Items.Add(Music[cmbPlaylists.SelectedIndex]._songs[i]._name + " Tiempo: " + 
+                   Music[cmbPlaylists.SelectedIndex]._songs[i]._time); 
             }
 
-            MediaPlayer.URL = Music[cmbPlaylists.SelectedIndex]._path[0];
+            MediaPlayer.URL = Music[cmbPlaylists.SelectedIndex]._songs[0]._path;
             lstSongs.SelectedIndex = 0; 
         }
         private void addSongbtn_Click(object sender, EventArgs e)
@@ -62,7 +67,7 @@ namespace LabRepaso_Diego_Pérez_1114016
 
         private void lstSongs_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MediaPlayer.URL = Music[cmbPlaylists.SelectedIndex]._path[lstSongs.SelectedIndex];                   
+            MediaPlayer.URL = Music[cmbPlaylists.SelectedIndex]._songs[lstSongs.SelectedIndex]._path;                       
         }
 
         private void cmbPlaylists_SelectedIndexChanged(object sender, EventArgs e)
@@ -73,13 +78,120 @@ namespace LabRepaso_Diego_Pérez_1114016
 
         private void pbxUp_Click(object sender, EventArgs e)
         {
-            if(Music.Count == 0 && cmbPlaylists.SelectedIndex < 0)
+            if (Music.Count == 0 || cmbPlaylists.SelectedIndex < 0)
             {
-                MessageBox.Show("No hay existe ninguna playlist, porfavor cree una"); 
+                MessageBox.Show("No hay ninguna playlist, porfavor cree una");
+
             }
             else
             {
-                
+                if(rbtnSortName.Checked == false && rbtnSortTime.Checked == false)
+                {
+                    MessageBox.Show("Seleccione el parametro por el cual desea ordenar"); 
+                }
+                else if(rbtnSortName.Checked == true)
+                {
+                    lstSongs.Items.Clear();
+                    IEnumerable<Song> sortedSongs =
+                    from song in Music[cmbPlaylists.SelectedIndex]._songs
+                    orderby song._name ascending
+                    select song;
+
+                    foreach (Song song in sortedSongs)
+                    {
+                        lstSongs.Items.Add(song._name + " Tiempo: " + song._time);
+                    }
+                    Music[cmbPlaylists.SelectedIndex]._songs = sortedSongs.ToList();
+                }
+                else if(rbtnSortTime.Checked == true)
+                {
+                    lstSongs.Items.Clear();
+                    IEnumerable<Song> sortedSongs =
+                    from song in Music[cmbPlaylists.SelectedIndex]._songs
+                    orderby song._time ascending
+                    select song;
+
+                    foreach (Song song in sortedSongs)
+                    {
+                        lstSongs.Items.Add( "Tiempo:" + song._time + " Nombre: " + song._name);
+                    }
+                    Music[cmbPlaylists.SelectedIndex]._songs = sortedSongs.ToList(); 
+                }
+               
+            }
+        }
+
+        private void pbxDown_Click(object sender, EventArgs e)
+        {
+
+            if (Music.Count == 0 || cmbPlaylists.SelectedIndex < 0)
+            {
+                MessageBox.Show("No hay existe ninguna playlist, porfavor cree una");
+            }
+            else
+            {
+                if (rbtnSortName.Checked == false && rbtnSortTime.Checked == false)
+                {
+                    MessageBox.Show("Seleccione el parametro por el cual desea ordenar");
+                }
+                else if (rbtnSortName.Checked == true)
+                {
+                    lstSongs.Items.Clear();
+                    IEnumerable<Song> sortedSongs =
+                    from song in Music[cmbPlaylists.SelectedIndex]._songs
+                    orderby song._name descending
+                    select song;
+
+                    foreach (Song song in sortedSongs)
+                    {
+                        lstSongs.Items.Add(song._name + " Tiempo: " + song._time);
+                    }
+                    Music[cmbPlaylists.SelectedIndex]._songs = sortedSongs.ToList();
+                }
+                else if (rbtnSortTime.Checked == true)
+                {
+                    lstSongs.Items.Clear();
+                    IEnumerable<Song> sortedSongs =
+                    from song in Music[cmbPlaylists.SelectedIndex]._songs
+                    orderby song._time descending
+                    select song;
+
+                    foreach (Song song in sortedSongs)
+                    {
+                        lstSongs.Items.Add("Tiempo:" + song._time + " Nombre: " + song._name);
+                    }
+                    Music[cmbPlaylists.SelectedIndex]._songs = sortedSongs.ToList(); 
+                }
+
+            }
+        }
+
+        private void pbxSearch_Click(object sender, EventArgs e)
+        {
+            bool find = false; 
+            if(txtboxSearch.Text == null)
+            {
+                MessageBox.Show("Ingrese el nombre de la canción");
+            }
+            else
+            {
+                foreach(Playlist playlist in Music)
+                {
+                    foreach(Song song in playlist._songs)
+                    {
+                        if (txtboxSearch.Text.ToUpper().Trim() == song._name.ToUpper().Trim())
+                        {
+                            lstSongs.Items.Clear();
+                            lstSongs.Items.Add(song._name + " Tiempo: " + song._time);
+                            MediaPlayer.URL = song._path;
+                            find = true; 
+                        }
+                    }
+                }
+                if(find == false)
+                {
+                    MessageBox.Show("Canción no encontrada en ninguna playlist"); 
+                }
             }
         }
     }

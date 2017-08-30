@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.AddSonglb = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@
             this.pbxSearch = new System.Windows.Forms.PictureBox();
             this.addSongbtn = new System.Windows.Forms.Button();
             this.addbtn = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.MediaPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUp)).BeginInit();
@@ -79,6 +81,7 @@
             this.MediaPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("MediaPlayer.OcxState")));
             this.MediaPlayer.Size = new System.Drawing.Size(343, 65);
             this.MediaPlayer.TabIndex = 4;
+            this.MediaPlayer.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.MediaPlayer_PlayStateChange);
             // 
             // lstSongs
             // 
@@ -224,6 +227,10 @@
             this.addbtn.UseVisualStyleBackColor = true;
             this.addbtn.Click += new System.EventHandler(this.addbtn_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,6 +285,7 @@
         private System.Windows.Forms.RadioButton rbtnSortTime;
         private System.Windows.Forms.RadioButton rbtnSortName;
         private System.Windows.Forms.TextBox txtboxSearch;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

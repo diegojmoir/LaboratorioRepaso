@@ -13,7 +13,8 @@ namespace LabRepaso_Diego_Pérez_1114016
     public partial class Form1 : Form
     {
         List<Playlist> Music = new List<Playlist>();
-        List<Song> aux = new List<Song>(); 
+        List<Song> aux = new List<Song>();
+        
         public Form1()
         {            
             InitializeComponent();
@@ -50,6 +51,10 @@ namespace LabRepaso_Diego_Pérez_1114016
             MediaPlayer.URL = Music[cmbPlaylists.SelectedIndex]._songs[0]._path;
             lstSongs.SelectedIndex = 0; 
         }
+
+
+
+
         private void addSongbtn_Click(object sender, EventArgs e)
         {
             if(Music.Count == 0)
@@ -67,7 +72,7 @@ namespace LabRepaso_Diego_Pérez_1114016
 
         private void lstSongs_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MediaPlayer.URL = Music[cmbPlaylists.SelectedIndex]._songs[lstSongs.SelectedIndex]._path;                       
+            MediaPlayer.URL = Music[cmbPlaylists.SelectedIndex]._songs[lstSongs.SelectedIndex]._path;             
         }
 
         private void cmbPlaylists_SelectedIndexChanged(object sender, EventArgs e)
@@ -192,6 +197,28 @@ namespace LabRepaso_Diego_Pérez_1114016
                 {
                     MessageBox.Show("Canción no encontrada en ninguna playlist"); 
                 }
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (lstSongs.SelectedIndex < Music[cmbPlaylists.SelectedIndex]._songs.Count -1 && lstSongs.Items.Count > 1)
+            {
+                lstSongs.SelectedIndex++;
+                timer1.Enabled = false;
+            }
+            else
+            {
+                timer1.Enabled = false;
+            }
+        }
+
+        private void MediaPlayer_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
+        {
+            if (MediaPlayer.playState == WMPLib.WMPPlayState.wmppsMediaEnded)
+            {
+                timer1.Interval = 100;
+                timer1.Enabled = true;
             }
         }
     }
